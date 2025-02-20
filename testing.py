@@ -8,13 +8,14 @@ import random
 
 #importing webdriver
 driver = webdriver.Firefox()
+#i used firefox driver and yahoo browser as they doesn't need to enter the captcha compared to google chrome
 driver.get("https://www.duckduckgo.com/")
 
-#yahoo ull pogudhu
+#yahoo browser
 elem = driver.find_element(By.XPATH, '//*[@id="searchbox_input"]')
 time.sleep(3)
 
-#google search bar
+#yahoo search bar
 elem.send_keys("Flipkart")
 time.sleep(3)
 elem.send_keys(Keys.ENTER)
@@ -28,6 +29,8 @@ elem.send_keys("Mobiles")
 time.sleep(3)
 elem.send_keys(Keys.ENTER)
 time.sleep(2)
+
+#scrolling the web page
 driver.execute_script("window.scrollTo(0,1500)")
 time.sleep(3)
 
